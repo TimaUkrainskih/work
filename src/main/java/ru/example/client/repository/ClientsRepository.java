@@ -1,8 +1,9 @@
 package ru.example.client.repository;
 
+import ru.example.client.model.ClientsAllInfo;
+
 import java.util.List;
-import java.util.Map;
 
 public interface ClientsRepository {
-    public List<Map<String, Object>> clients();
+    List<ClientsAllInfo> clients(int offset);
 }
