@@ -1,4 +1,4 @@
-package ru.example.client.exception;
+package ru.example.client.repository.exception;
 
 public class CustomDataAccessException extends RuntimeException {
     public CustomDataAccessException(String message) {
