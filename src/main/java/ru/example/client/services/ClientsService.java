@@ -16,4 +16,8 @@ public class ClientsService {
     public List<ClientsAllInfo> clientsAllInfoList(int offset) {
         return clientsRepository.clients(offset);
     }
+
+    public int getTotalRecords() {
+        return clientsRepository.getCountRecords();
+    }
 }

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ClientsRepository {
     List<ClientsAllInfo> clients(int offset);
+    int getCountRecords();
 }

@@ -1,4 +1,4 @@
-package ru.example.client.services;
+package ru.example.client.kafka;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -15,7 +15,7 @@ public class KafkaMessagingService {
 
     public void sendDataToKafka(List<ClientsAllInfo> clients) {
         String message = "{\"data\":" + clients + "}\n";
-        kafkaTemplate.send("test", message);
+        kafkaTemplate.send("test",0,null, message);
     }
 }
 

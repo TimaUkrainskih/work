@@ -1,16 +1,15 @@
-package ru.example.client.services;
+package ru.example.client.kafka;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Service;
 import ru.example.client.model.ClientsAllInfo;
+import ru.example.client.services.ClientsService;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class ClientDataKafkaSender implements ApplicationRunner {
+public class ClientDataKafkaSender{
 
     private final KafkaMessagingService kafkaMessagingService;
 
@@ -25,10 +24,5 @@ public class ClientDataKafkaSender implements ApplicationRunner {
             if (clients.size() < 5) break;
             offset += 5;
         }
-    }
-
-    @Override
-    public void run(ApplicationArguments args) throws Exception {
-        send();
     }
 }

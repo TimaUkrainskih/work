@@ -53,6 +53,14 @@ public class ClientsJDBCRepository implements ClientsRepository {
         return result;
     }
 
+    @Override
+    public int getCountRecords() {
+        String sql = "select count(*)" +
+                " from clients" +
+                " inner join subscriptions on clients.client_id = subscriptions.client_id";
+        return jdbcTemplate.queryForObject(sql, Integer.class);
+    }
+
     private void update(int offset) {
         jdbcTemplate.execute((Connection con) -> {
             try (CallableStatement callableStatement = con.prepareCall("call update_last_reading_dttm(?) ")) {
