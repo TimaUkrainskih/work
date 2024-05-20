@@ -15,7 +15,7 @@ public class KafkaMessagingService {
 
     public void sendDataToKafka(List<ClientsAllInfo> clients) {
         String message = "{\"data\":" + clients + "}\n";
-        kafkaTemplate.send("test",0,null, message);
+        kafkaTemplate.send("test",4,null, message);
     }
 }
 
